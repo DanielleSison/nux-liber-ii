@@ -9,11 +9,13 @@ import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
+  // eslint-disable-next-line
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
   const userData = data?.me || {};
 
   // use this to determine if `useEffect()` hook needs to run again
+  // eslint-disable-next-line
   const userDataLength = Object.keys(userData).length;
 
 
@@ -26,6 +28,7 @@ const SavedBooks = () => {
     }
 
     try {
+      // eslint-disable-next-line
       const { data } = await removeBook({
         variables: { bookId },
       });
